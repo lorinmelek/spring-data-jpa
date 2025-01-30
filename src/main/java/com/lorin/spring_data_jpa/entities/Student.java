@@ -22,11 +22,9 @@ public class Student {
     @Column(name = "birth_of_date", nullable = true)
     private String birthOfDate;
 
-    // Default constructor (parametresiz)
     public Student() {
     }
 
-    // Parametreli constructor (tüm alanlarla)
     public Student(Integer id, String firstName, String lastName, String birthOfDate) {
         this.id = id;
         this.firstName = firstName;
@@ -34,7 +32,7 @@ public class Student {
         this.birthOfDate = birthOfDate;
     }
 
-    // Getter ve Setter metodları
+
     public Integer getId() {
         return id;
     }
