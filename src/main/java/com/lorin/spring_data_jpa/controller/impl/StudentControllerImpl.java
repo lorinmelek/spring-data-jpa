@@ -5,6 +5,7 @@ import com.lorin.spring_data_jpa.dto.DtoStudent;
 import com.lorin.spring_data_jpa.dto.DtoStudentIU;
 import com.lorin.spring_data_jpa.entities.Student;
 import com.lorin.spring_data_jpa.services.impl.IStudentServices;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class StudentControllerImpl implements IStudentController
     //dto kullanılıyormuş normalde buranın yerine
     @PostMapping(path = "/save")
     @Override
-    public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudentIU)
+    public DtoStudent saveStudent(@RequestBody @Valid DtoStudentIU dtoStudentIU)
     {
         return studentServices.saveStudent(dtoStudentIU);
     }
